@@ -41,4 +41,5 @@ def Query(dates, code):
 
 if __name__ == '__main__':
   out = Query(['2018-09-30', '2018-06-30', '2018-03-31'], '002415')
+  out.to_excel('d:/test.xls')
   pass

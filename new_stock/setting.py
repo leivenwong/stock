@@ -21,7 +21,7 @@ def currentOS():
 CHROME_DRIVER_PATH = r'/home/ken/prog/chromedriver_linux64/chromedriver' if sys.platform == 'linux' else \
   ''
 PHANTOMJS_PATH = r'/home/ken/prog/phantomjs-2.1.1-linux-x86_64/bin/phantomjs'  if sys.platform == 'linux' else \
-  ''
+  'd:/phantomjs-2.1.1/bin/phantomjs.exe'
 
 if __name__ == '__main__':
   out = currentStockList()

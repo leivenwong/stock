@@ -270,8 +270,8 @@ if __name__ == '__main__':
   import query.query_hs300
 
   stockList = [
-    (query.query_hs300.queryCodeList(), '/home/ken/workspace/tmp/out-hs300.xls'),
-    (const.STOCK_LIST, '/home/ken/workspace/tmp/out-all.xls'),
+    (query.query_hs300.queryCodeList(), 'd:/stock_python/out/out-hs300.xls'),
+    (const.STOCK_LIST, 'd:/stock_python/out/out-all.xls'),
   ]
 
 
