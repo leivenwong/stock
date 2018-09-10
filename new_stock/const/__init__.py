@@ -289,5 +289,5 @@ if __name__ == '__main__':
   import sys
 
   print(sys.path)
-  sys.path.append('/home/ken/workspace/code/self/github/py-code/new_stock')
+  sys.path.append('D:\\stock_python\\stock\\new_stock')
   import util

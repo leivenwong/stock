@@ -10,7 +10,7 @@ import numpy as np
 if __name__ == '__main__':
   import sys
 
-  sys.path.append('/home/ken/workspace/code/self/github/py-code/new_stock')
+  sys.path.append('D:\\stock_python\\stock\\new_stock')
 ##########################
 import const
 

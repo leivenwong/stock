@@ -22,7 +22,7 @@ def addSysPath(path):
       return
   sys.path.append(path)
 
-addSysPath('/home/ken/workspace/code/self/github/py-code/new_stock')
+addSysPath('D:\\stock_python\\stock\\new_stock')
 ######################################################################################
 import util
 import util.utils
