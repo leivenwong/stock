@@ -1,5 +1,8 @@
 import os
 
+os.system("python D:/stock_python/stock/stock/share.py")
+print("share has run.")
+
 os.system("python D:/stock_python/stock/new_stock/fake_spider/tushare/hs300.py")
 print("hs300 has run.")
 
