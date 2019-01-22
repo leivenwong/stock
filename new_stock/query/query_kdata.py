@@ -12,7 +12,7 @@ import pymongo
 if __name__ == '__main__':
   import sys
 
-  sys.path.append('D:\\stock_python\\stock\\new_stock')
+  sys.path.append('D:\stock_python\stock/new_stock')
 ##########################
 import util
 import util.utils

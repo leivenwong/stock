@@ -13,7 +13,7 @@ from pymongo import MongoClient
 if __name__ == '__main__':
   import sys
 
-  sys.path.append('D:\\stock_python\\stock\\new_stock')
+  sys.path.append('D:\stock_python\stock/new_stock')
 ##########################
 import util
 import util.utils
@@ -41,5 +41,4 @@ def Query(dates, code):
 
 if __name__ == '__main__':
   out = Query(['2018-09-30', '2018-06-30', '2018-03-31'], '002415')
-  out.to_excel('d:/test.xls')
   pass

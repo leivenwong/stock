@@ -12,7 +12,7 @@ from pymongo import MongoClient
 if __name__ == '__main__':
   import sys
 
-  sys.path.append('D:\\stock_python\\stock\\new_stock')
+  sys.path.append('D:\stock_python\stock/new_stock')
 ##########################
 import util
 import util.utils
@@ -49,7 +49,7 @@ def mock000725():
     return x.to_pydatetime()
 
 
-  df = pd.read_excel('/home/ken/workspace/tmp/im_out-adjust-000725(12).xlsx')
+  df = pd.read_excel('d:/stock_python/out/im_out-adjust-000725(12).xlsx')
   df.loc[:, KEY_NAME['date']] = df.loc[:, KEY_NAME['date']].map(string2Datetime)
   df.set_index(KEY_NAME['date'], inplace=True)
   print(df)

@@ -10,7 +10,7 @@ import numpy as np
 if __name__ == '__main__':
   import sys
 
-  sys.path.append('D:\\stock_python\\stock\\new_stock')
+  sys.path.append('D:\stock_python\stock/new_stock')
 ##########################
 import util
 import util.utils as utils
@@ -94,16 +94,16 @@ def prepareResult(data):
 # def test2(code):
 #   # df = mock.mock000725()
 #   # s = stock.Stock('002415')
-#   # s.load(file='/home/ken/workspace/tmp/im_out-adjust-000725(12).xlsx')
+#   # s.load(file='d:/stock_python/out/im_out-adjust-000725(12).xlsx')
 #   # df = s.data
 #
 #   s = stock.Stock('002415')
 #   s.load(cwsj=None, yjyg=['2018-09-30', '2018-06-30', '2018-03-31'])
-#   s.loadBenchmark(file='/home/ken/workspace/tmp/out-adjust-002415.xlsx')
+#   s.loadBenchmark(file='d:/stock_python/out/out-adjust-002415.xlsx')
 #   df = s.data
 #   # df = df.loc[:, [KN['date'], KN['zgb'], KN['jbmgsy']]]
 #   bdf = s.benchmark_data
-#   df.to_excel('/home/ken/workspace/tmp/base-002415.xls')
+#   df.to_excel('d:/stock_python/out/base-002415.xls')
 #
 #   oneLoop = loop.AdjustLoop()
 #   oneLoop.addOP(forecastProfit.GenForecastProfit())
@@ -121,7 +121,7 @@ def prepareResult(data):
 #   # oneLoop.columns.extend([KEY_NAME['jbmgsy'], ADJUST_NAME['zgb'], const.YJYG_KEYWORD.KEY_NAME['forecastl']])
 #   # column = oneLoop.columns
 #   # re = df.loc[:, column]
-#   # re.to_excel('/home/ken/workspace/tmp/out-002415.xls')
+#   # re.to_excel('d:/stock_python/out/out-002415.xls')
 #   oneLoop.verify(df, bdf)
 
 
@@ -129,14 +129,14 @@ def prepareResult(data):
 def test(saveDB=True, saveFile=False, benchmark=False):
   s = stock.Stock('000725')
   mock = {
-    'file': '/home/ken/workspace/tmp/im_out-adjust-000725(12).xlsx',
+    'file': 'd:/stock_python/out/im_out-adjust-000725(12).xlsx',
     'zgb': 33862290000,
   }
   s.load(mock=mock)
   # s = stock.Stock(code)
   # s.load(cwsj=True, yjyg=['2018-09-30', '2018-06-30', '2018-03-31'])
   # if benchmark:
-  #   s.loadBenchmark(file='/home/ken/workspace/tmp/out-adjust-' + code + '.xlsx')
+  #   s.loadBenchmark(file='d:/stock_python/out/out-adjust-' + code + '.xlsx')
   df = s.data
   # df = df.loc[:, [KN['date'], KN['zgb'], KN['jbmgsy']]]
   bdf =df.copy()
@@ -169,7 +169,7 @@ def filterOut(df):
   forecastNow = np.nan
   forecastNext = np.nan
   notNull = df[ADJUST_NAME['ForecastQuarterProfit']].notnull()
-  out = df.loc[notNull, :].head(1)
+  out = df.loc[notNull, :].head(2)
   if len(out.index):
     r = util.performancePreviewRange()
     try:
@@ -215,13 +215,14 @@ def changeColumns(df):
 def calcOne(code, saveDB=True, saveFile=False, benchmark=False):
   print('calcOne %s'%(code))
   s = stock.Stock(code)
-  s.load(cwsj=True, yjyg=['2018-09-30', '2018-06-30', '2018-03-31'])
+  s.load(cwsj=True, yjyg=['2019-03-31', '2018-12-31', '2018-09-30',
+                          '2018-06-30', '2018-03-31'])
   if benchmark:
-    s.loadBenchmark(file='/home/ken/workspace/tmp/out-adjust-' + code + '.xlsx')
+    s.loadBenchmark(file='d:/stock_python/out/out-adjust-' + code + '.xlsx')
   df = s.data
   # df = df.loc[:, [KN['date'], KN['zgb'], KN['jbmgsy']]]
   bdf = s.benchmark_data
-  # df.to_excel('/home/ken/workspace/tmp/stock.xls')
+  # df.to_excel('d:/stock_python/out/stock.xls')
 
   oneLoop = loop.AdjustLoop()
   oneLoop.addOP(marketValue.GenMarketValue(s))
@@ -246,7 +247,7 @@ def calcOne(code, saveDB=True, saveFile=False, benchmark=False):
   # oneLoop.columns.extend([KEY_NAME['jbmgsy'], ADJUST_NAME['zgb'], const.YJYG_KEYWORD.KEY_NAME['forecastl']])
   # column = oneLoop.columns
   # re = df.loc[:, column]
-  # re.to_excel('/home/ken/workspace/tmp/out-002415.xls')
+  # re.to_excel('d:/stock_python/out/out-002415.xls')
   dfOut = None
   if benchmark:
     dfOut = oneLoop.verify(df, bdf)
@@ -261,7 +262,7 @@ def calcOne(code, saveDB=True, saveFile=False, benchmark=False):
     util.saveMongoDB(dfOut, util.genKeyDateFunc(const.MONGODB_ID), 'stock-out', 'cwsj-' + code)
 
   if saveFile:
-    dfOut.to_excel('/home/ken/workspace/tmp/out-' + code + '.xls')
+    dfOut.to_excel('d:/stock_python/out/out-' + code + '.xls')
 
   return dfOut
 
@@ -278,15 +279,15 @@ if __name__ == '__main__':
   for s in stockList:
     onedf = pd.DataFrame()
     for one in s[0]:
-      # if one == '603516':
-      #   pass
+       #if one == '603516':
+         #pass
       tmp = calcOne(one)
       tmp2 = filterOut(tmp)
       tmp3 = changeColumns(tmp2)
-      # if one == '000786':
-      #   tmp.to_excel('/home/ken/workspace/tmp/000786-1.xls')
-      #   tmp2.to_excel('/home/ken/workspace/tmp/000786-2.xls')
-      #   tmp3.to_excel('/home/ken/workspace/tmp/000786-3.xls')
+      #if one == '000651':
+         #tmp.to_excel('d:/stock_python/out/000651-1.xls')
+         #tmp2.to_excel('d:/stock_python/out/000651-2.xls')
+         #tmp3.to_excel('d:/stock_python/out/000651-3.xls')
       if len(onedf.index) == 0:
         onedf = tmp3
       else:

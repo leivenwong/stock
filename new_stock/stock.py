@@ -13,7 +13,7 @@ from pymongo import MongoClient
 if __name__ == '__main__':
   import sys
 
-  sys.path.append('D:\\stock_python\\stock\\new_stock')
+  sys.path.append('D:\stock_python\stock/new_stock')
 ##########################
 import util
 import util.utils
@@ -137,5 +137,5 @@ if __name__ == '__main__':
   s.load(cwsj=True, yjyg=['2018-09-30', '2018-06-30', '2018-03-31'])
   df = s.data
   print(df)
-  df.to_excel('/home/ken/workspace/tmp/new-002415.xls')
+  df.to_excel('d:/stock_python/out/new-002415.xls')
   pass

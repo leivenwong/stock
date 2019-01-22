@@ -10,7 +10,7 @@ import tushare as ts
 if __name__ == '__main__':
   import sys
 
-  sys.path.append('D:\\stock_python\\stock\\new_stock')
+  sys.path.append('D:\stock_python\stock/new_stock')
 ##########################
 import util
 import util.utils
@@ -47,7 +47,7 @@ def getBasics():
     df = ts.get_stock_basics()
     df.rename(columns=TS.BASICS.KEY_NAME, inplace=True)
     # df.set_index(TS.BASICS.KEY_NAME['code'], inplace=True)
-    # re.to_excel('/home/ken/workspace/tmp/stock_list.xls')
+    # re.to_excel('d:/stock_python/out/stock_list.xls')
     return df
   except Exception as e:
     print(e)

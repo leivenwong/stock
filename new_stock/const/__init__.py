@@ -289,5 +289,5 @@ if __name__ == '__main__':
   import sys
 
   print(sys.path)
-  sys.path.append('D:\\stock_python\\stock\\new_stock')
+  sys.path.append('D:\stock_python\stock/new_stock')
   import util

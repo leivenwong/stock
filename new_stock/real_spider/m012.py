@@ -24,7 +24,7 @@ def addSysPath(path):
   sys.path.append(path)
 
 
-addSysPath('D:\\stock_python\\stock\\new_stock')
+addSysPath('D:\stock_python\stock/new_stock')
 ######################################################################################
 import util
 import util.utils

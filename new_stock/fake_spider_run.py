@@ -1,7 +1,7 @@
 import os
 
-os.system("python D:/stock_python/stock/stock/share.py")
-print("share has run.")
+#os.system("python D:/stock_python/stock/stock/share.py")
+#print("share has run.")
 
 os.system("python D:/stock_python/stock/new_stock/fake_spider/tushare/hs300.py")
 print("hs300 has run.")
@@ -24,8 +24,8 @@ print("m012 has run.")
 os.system("python D:/stock_python/stock/new_stock/fake_spider/spider.py")
 print("spider has run.")
 
-os.system("python D:/stock_python/stock/new_stock/fake_spider/yjjg.py")
-print("yjjg has run.")
+os.system("python D:/stock_python/stock/new_stock/fake_spider/yjyg.py")
+print("yjyg has run.")
 
 os.system("python D:/stock_python/stock/new_stock/fake_spider/zgb2.py")
 print("zgb2 has run.")

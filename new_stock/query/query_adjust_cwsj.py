@@ -11,7 +11,7 @@ from pymongo import MongoClient
 if __name__ == '__main__':
   import sys
 
-  sys.path.append('D:\\stock_python\\stock\\new_stock')
+  sys.path.append('D:\stock_python\stock/new_stock')
 ##########################
 import util
 import util.utils
@@ -56,6 +56,6 @@ if __name__ == '__main__':
   # dropAll()
   df = QueryTop(-1, '000725')
   print(df)
-  df.to_excel('/home/ken/workspace/tmp/out-adjust-000725.xls')
+  df.to_excel('d:/stock_python/out/out-adjust-000725.xls')
   # SaveData(re)
   pass
